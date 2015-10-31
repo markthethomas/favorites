@@ -1,0 +1,25 @@
+{
+  "name": "favorites",
+  "version": "0.0.1",
+  "description": "Simple cli util to install your commonly-used packages globally or in a project you're just starting on",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markthethomas/favorites.git"
+  },
+  "keywords": [
+    "favorites",
+    "install",
+    "modules",
+    "npm"
+  ],
+  "author": "Mark Thomas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/markthethomas/favorites/issues"
+  },
+  "homepage": "https://github.com/markthethomas/favorites#readme"
+}
