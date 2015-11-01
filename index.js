@@ -3,14 +3,19 @@ const Promise = require('bluebird');
 
 
 const cli = require('commander');
+const chalk = require('chalk');
 const exec = require('child_process').exec;
 const fs = Promise.promisifyAll(require('fs'));
 const path = require('path');
 const validator = require('is-my-json-valid');
 
-const INSTALL_GLOBAL = 'npm install --global';
+const INSTALL_GLOBAL = 'npm install -g';
 const INSTALL_PROJECT = 'npm install -S';
 const INSTALL_PROJECT_DEV = 'npm install --save-dev';
+
+function logError(err) {
+  console.error(chalk.bgRed('SCHEMA ERROR: '), err);
+}
 
 const validate = validator({
   required: true,
@@ -35,11 +40,20 @@ let favorites = cli
 
 favorites.command('install <favorites>')
   .description('install your favorites')
-  .action((favorites) => {
+  .action((jsonFavorites) => {
     fs
-      .readFileAsync(path.resolve(favorites), 'utf8')
+      .readFileAsync(path.resolve(jsonFavorites), 'utf8')
       .then(data => {
-        return JSON.parse(data);
+        let parsedFavorites = JSON.parse(data);
+        if (validate(parsedFavorites)) {
+          console.log(chalk.green('Valid Schema \u2713 '));
+          return parsedFavorites[favorites.global ? 'global' : 'project'];
+        } else {
+          console.error(validate.errors);
+          validate.errors.forEach((err) => {
+            logError(chalk.red(`field ${err.field} ${err.message}`));
+          })
+        }
       })
       .catch(err => {
         if (err) {
@@ -47,12 +61,27 @@ favorites.command('install <favorites>')
         };
       })
       .then(parsedFavorites => {
-        console.log(parsedFavorites);
-        return parsedFavorites;
+        let devDeps = [];
+        let deps = [];
+        for (var dep in parsedFavorites.dependencies) {
+          if (parsedFavorites.dependencies.hasOwnProperty(dep)) {
+            deps.push(`${dep}@${parsedFavorites.dependencies[dep]}`);
+          }
+        }
+        for (var dep in parsedFavorites.devDependencies) {
+          if (parsedFavorites.devDependencies.hasOwnProperty(dep)) {
+            devDeps.push(`${dep}@${parsedFavorites.devDependencies[dep]}`);
+          }
+        }
+        return [deps, devDeps];
       })
-      .then(favoriteModules => {
-        console.log('global attempt to install: ');
-        console.log(favoriteModules);
+      .spread((deps, devDeps) => {
+        console.log(chalk.green('Installing your favorites'));
+        if (favorites.global) {
+          exec(`${INSTALL_GLOBAL} ${deps.join(' ')}`).stdout.pipe(process.stdout)
+        } else {
+          exec(`${INSTALL_PROJECT} ${deps.join(' ')} && ${INSTALL_PROJECT_DEV} ${devDeps.join(' ')}`).stdout.pipe(process.stdout)
+        }
       })
   });
 
