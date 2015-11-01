@@ -4,7 +4,7 @@
   "description": "Simple cli util to install your commonly-used packages globally or in a project you're just starting on",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "ava test/test.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,18 @@
   "bugs": {
     "url": "https://github.com/markthethomas/favorites/issues"
   },
-  "homepage": "https://github.com/markthethomas/favorites#readme"
+  "homepage": "https://github.com/markthethomas/favorites#readme",
+  "devDependencies": {
+    "ava": "^0.3.0",
+    "babel": "^6.0.14",
+    "babel-core": "^6.0.14",
+    "eslint": "^1.8.0",
+    "mocha": "^2.3.3"
+  },
+  "dependencies": {
+    "bluebird": "^3.0.2",
+    "commander": "^2.9.0",
+    "is-my-json-valid": "^2.12.2",
+    "lodash": "^3.10.1"
+  }
 }
