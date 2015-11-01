@@ -1,0 +1,22 @@
+{
+  "global": {
+    "devDependencies": {
+      "babel": "^6.0.14",
+      "eslint": "^1.8.0",
+      "mocha": "^2.3.3"
+    },
+    "dependencies": {
+      "commander": "^2.9.0"
+    }
+  },
+  "project": {
+    "devDependencies": {
+      "babel": "^6.0.14",
+      "eslint": "^1.8.0",
+      "mocha": "^2.3.3"
+    },
+    "dependencies": {
+      "commander": "^2.9.0"
+    }
+  }
+}
