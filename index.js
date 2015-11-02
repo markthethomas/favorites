@@ -63,14 +63,14 @@ function resolveFavorites(jsonPath) {
 }
 
 const favorites = cli
-  .version('0.0.4')
+  .version('0.0.5')
   .usage('[options] favorites install <favorites.json> (can be local or public URL)')
   .option('-v, --verbose', 'Show parsed favorites to be installed')
   .option('-p, --project', 'Install your favorites into a local project')
   .option('-g, --global', 'Install your favorites globally');
 
-favorites.command('install <favorites>')
-  .description('install your favorites')
+favorites.command('install [options] <favorites>')
+  .description('install your favorites!')
   .action((jsonFavorites) => {
     resolveFavorites(jsonFavorites)
       .then(data => {

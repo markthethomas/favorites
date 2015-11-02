@@ -12,6 +12,8 @@ npm install favorites -g
 
 ## Usage
 
+`favorites install [options] <favorites>`
+
 You can use a local favorites.json file or just use one that you host. You just need two objects with your `dependencies` and `devDependencies` under a `global` and `project` object.
 
 *Schema Example*

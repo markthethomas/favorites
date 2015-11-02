@@ -1,6 +1,6 @@
 {
   "name": "favorites",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Simple cli util to install your commonly-used packages globally or in a project you're just starting on",
   "main": "index.js",
   "preferGlobal": "true",
