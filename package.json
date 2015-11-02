@@ -3,6 +3,10 @@
   "version": "0.0.3",
   "description": "Simple cli util to install your commonly-used packages globally or in a project you're just starting on",
   "main": "index.js",
+  "preferGlobal": "true",
+  "bin": {
+    "favorites": "index.js"
+  },
   "scripts": {
     "test": "ava test/test.js"
   },
