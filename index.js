@@ -63,7 +63,7 @@ function resolveFavorites(jsonPath) {
 }
 
 const favorites = cli
-  .version('0.0.5')
+  .version('0.0.6')
   .usage('[options] favorites install <favorites.json> (can be local or public URL)')
   .option('-v, --verbose', 'Show parsed favorites to be installed')
   .option('-p, --project', 'Install your favorites into a local project')

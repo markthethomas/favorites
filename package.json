@@ -1,9 +1,13 @@
 {
   "name": "favorites",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Simple cli util to install your commonly-used packages globally or in a project you're just starting on",
   "main": "index.js",
   "preferGlobal": "true",
+  "engines" : {
+    "node" : ">=4.2.1",
+    "npm":  ">=2.14.8"
+  },
   "bin": {
     "favorites": "index.js"
   },
