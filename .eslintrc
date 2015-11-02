@@ -1,0 +1,15 @@
+{
+  "extends": "airbnb/base",
+  "rules": {
+    "indent": 2,
+    "id-length": [2, { "exceptions": ["_", "i"]}],
+    "new-cap": [2, {"capIsNewExceptions": ["Router"]}],
+    "no-console": 0
+  },
+  "env": {
+  "browser": true,
+  "node": true,
+  "es6": true,
+  "mocha": true
+  }
+}
