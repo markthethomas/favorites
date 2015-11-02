@@ -7,10 +7,45 @@ Simple cli util to install your commonly-used packages globally or in a project 
 Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't already.
 
 ```sh
-npm install favorites
+npm install favorites -g
 ```
 
 ## Usage
+
+You can use a local favorites.json file or just use one that you host. You just need two objects with your `dependencies` and `devDependencies` under a `global` and `project` object.
+
+*Schema Example*
+
+```JSON
+{
+  "global": {
+    "devDependencies": {
+      "babel": "^6.0.14",
+      "eslint": "^1.8.0",
+      "mocha": "^2.3.3",
+      "pm2": "^0.15.8",
+      "bluebird": "^3.0.5"
+    },
+    "dependencies": {
+      "commander": "^2.9.0"
+    }
+  },
+  "project": {
+    "devDependencies": {
+      "babel": "^6.0.14",
+      "eslint": "^1.8.0",
+      "mocha": "^2.3.3",
+      "lodash": "^3.10.1"
+    },
+    "dependencies": {
+      "commander": "^2.9.0"
+    }
+  }
+}
+```
+[Example schema](https://raw.githubusercontent.com/markthethomas/npmFavorites/master/favorites.json)
+
+*CLI Usage*
 
 ```sh
 Commands:
