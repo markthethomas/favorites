@@ -59,7 +59,7 @@ function resolveFavorites(jsonPath) {
 
 const favorites = cli
   .version('0.0.1')
-  .usage('favorites install <favorites.json> (can be local or public URL)')
+  .usage('[options] favorites install <favorites.json> (can be local or public URL)')
   .option('-v, --verbose', 'Show parsed favorites to be installed')
   .option('-p, --project', 'Install your favorites into a local project')
   .option('-g, --global', 'Install your favorites globally');
@@ -117,5 +117,6 @@ favorites.command('install <favorites>')
   });
 
 favorites.parse(process.argv);
+
 
 module.exports = favorites;
