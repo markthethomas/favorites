@@ -7,7 +7,7 @@ Simple cli util to install your commonly-used packages globally or in a project 
 Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't already.
 
 ```sh
-npm install favorites --save
+npm install favorites
 ```
 
 ## Usage
