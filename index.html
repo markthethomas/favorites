@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Favorites by markthethomas</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/markthethomas/favorites">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Favorites</h1>
+            <h2>Easily install your favorite npm modules</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/markthethomas/favorites/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/markthethomas/favorites/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>
+<a id="favorites" class="anchor" href="#favorites" aria-hidden="true"><span class="octicon octicon-link"></span></a>favorites</h1>
+
+<p>Simple cli util to install your commonly-used packages globally or in a project you're just starting on</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Download node at <a href="http://nodejs.org">nodejs.org</a> and install it, if you haven't already.</p>
+
+<div class="highlight highlight-source-shell"><pre>npm install favorites -g</pre></div>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>You can use a local favorites.json file or just use one that you host. You just need two objects with your <code>dependencies</code> and <code>devDependencies</code> under a <code>global</code> and <code>project</code> object.</p>
+
+<p><em>Schema Example</em></p>
+
+<div class="highlight highlight-source-json"><pre>{
+  <span class="pl-s"><span class="pl-pds">"</span>global<span class="pl-pds">"</span></span>: {
+    <span class="pl-s"><span class="pl-pds">"</span>devDependencies<span class="pl-pds">"</span></span>: {
+      <span class="pl-s"><span class="pl-pds">"</span>babel<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^6.0.14<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>eslint<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^1.8.0<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>mocha<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^2.3.3<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>pm2<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^0.15.8<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>bluebird<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^3.0.5<span class="pl-pds">"</span></span>
+    },
+    <span class="pl-s"><span class="pl-pds">"</span>dependencies<span class="pl-pds">"</span></span>: {
+      <span class="pl-s"><span class="pl-pds">"</span>commander<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^2.9.0<span class="pl-pds">"</span></span>
+    }
+  },
+  <span class="pl-s"><span class="pl-pds">"</span>project<span class="pl-pds">"</span></span>: {
+    <span class="pl-s"><span class="pl-pds">"</span>devDependencies<span class="pl-pds">"</span></span>: {
+      <span class="pl-s"><span class="pl-pds">"</span>babel<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^6.0.14<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>eslint<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^1.8.0<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>mocha<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^2.3.3<span class="pl-pds">"</span></span>,
+      <span class="pl-s"><span class="pl-pds">"</span>lodash<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^3.10.1<span class="pl-pds">"</span></span>
+    },
+    <span class="pl-s"><span class="pl-pds">"</span>dependencies<span class="pl-pds">"</span></span>: {
+      <span class="pl-s"><span class="pl-pds">"</span>commander<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^2.9.0<span class="pl-pds">"</span></span>
+    }
+  }
+}</pre></div>
+
+<p><a href="https://raw.githubusercontent.com/markthethomas/npmFavorites/master/favorites.json">Example schema</a></p>
+
+<p><em>CLI Usage</em></p>
+
+<div class="highlight highlight-source-shell"><pre>Commands:
+
+  install <span class="pl-k">&lt;</span>favorites<span class="pl-k">&gt;</span>  install your favorites
+
+Options:
+
+  -h, --help     output usage information
+  -V, --version  output the version number
+  -v, --verbose  Show parsed favorites to be installed
+  -p, --project  Install your favorites into a <span class="pl-k">local</span> project
+  -g, --global   Install your favorites globally</pre></div>
+
+<h2>
+<a id="tests" class="anchor" href="#tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tests</h2>
+
+<div class="highlight highlight-source-shell"><pre>npm install
+npm <span class="pl-c1">test</span></pre></div>
+
+<h2>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<ul>
+<li>
+<a href="https://github.com/petkaantonov/bluebird">bluebird</a>: Full featured Promises/A+ implementation with exceptionally good performance</li>
+<li>
+<a href="https://github.com/chalk/chalk">chalk</a>: Terminal string styling done right. Much color.</li>
+<li>
+<a href="https://github.com/tj/commander.js">commander</a>: the complete solution for node.js command-line programs</li>
+<li>
+<a href="https://github.com/mafintosh/is-my-json-valid">is-my-json-valid</a>: A JSONSchema validator that uses code generation to be extremely fast</li>
+<li>
+<a href="https://github.com/request/request-promise">request-promise</a>: The world-famous HTTP client 'Request' now Promises/A+ compliant. Powered by Bluebird.</li>
+<li>
+<a href="https://github.com/chriso/validator.js">validator</a>: String validation and sanitization</li>
+</ul>
+
+<h2>
+<a id="dev-dependencies" class="anchor" href="#dev-dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dev Dependencies</h2>
+
+<ul>
+<li>
+<a href="https://github.com/sindresorhus/ava">ava</a>: Futuristic test runner</li>
+<li>
+<a href="https://github.com/babel/babel/tree/master/packages">babel</a>: Turn ES6 code into readable vanilla ES5 with source maps</li>
+<li>
+<a href="https://github.com/babel/babel/tree/master/packages">babel-core</a>: Babel compiler core.</li>
+<li>
+<a href="https://github.com/babel/babel-eslint">babel-eslint</a>: <strong>babel-eslint</strong> allows you to lint <strong>ALL</strong> valid Babel code with the fantastic <a href="https://github.com/eslint/eslint">ESLint</a>.</li>
+<li>
+<a href="https://github.com/eslint/eslint">eslint</a>: An AST-based pattern checker for JavaScript.</li>
+<li>
+<a href="https://github.com/airbnb/javascript">eslint-config-airbnb</a>: Airbnb's ESLint config, following our styleguide</li>
+<li>
+<a href="https://github.com/lodash/lodash">lodash</a>: The modern build of lodash modular utilities.</li>
+<li>
+<a href="https://github.com/mochajs/mocha">mocha</a>: simple, flexible, fun test framework</li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>MIT</p>
+
+<p><em>Generated by <a href="https://github.com/zeke/package-json-to-readme">package-json-to-readme</a></em></p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/markthethomas">markthethomas</a> can be found on <a href="https://github.com/markthethomas/favorites">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-48345857-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
