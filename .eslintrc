@@ -2,7 +2,7 @@
   "extends": "airbnb/base",
   "rules": {
     "indent": 2,
-    "id-length": [2, { "exceptions": ["_", "i"]}],
+    "id-length": [2, { "exceptions": ["_", "t"]}],
     "new-cap": [2, {"capIsNewExceptions": ["Router"]}],
     "no-console": 0
   },

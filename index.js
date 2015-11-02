@@ -2,6 +2,8 @@
 
 'use strict';
 
+require('babel-core/register');
+
 const Promise = require('bluebird');
 const cli = require('commander');
 const validator = require('validator');
@@ -15,6 +17,7 @@ const jsonValidator = require('is-my-json-valid');
 const INSTALL_GLOBAL = 'npm install -g';
 const INSTALL_PROJECT = 'npm install -S';
 const INSTALL_PROJECT_DEV = 'npm install --save-dev';
+
 
 function logError(err) {
   console.error(chalk.bgRed('SCHEMA ERROR: '), err);
@@ -60,7 +63,7 @@ function resolveFavorites(jsonPath) {
 }
 
 const favorites = cli
-  .version('0.0.1')
+  .version('0.0.4')
   .usage('[options] favorites install <favorites.json> (can be local or public URL)')
   .option('-v, --verbose', 'Show parsed favorites to be installed')
   .option('-p, --project', 'Install your favorites into a local project')
