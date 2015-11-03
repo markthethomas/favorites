@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/markthethomas/favorites/badge.svg?branch=master&service=github)](https://coveralls.io/github/markthethomas/favorites?branch=master) [![Build Status](https://travis-ci.org/markthethomas/favorites.svg?branch=master)](https://travis-ci.org/markthethomas/favorites) [![Code Climate](https://codeclimate.com/github/markthethomas/favorites/badges/gpa.svg)](https://codeclimate.com/github/markthethomas/favorites)
+
 # favorites
 
 Simple cli util to install your commonly-used packages globally or in a project you&#39;re just starting on

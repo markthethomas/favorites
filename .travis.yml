@@ -1,4 +1,11 @@
 language: node_js
 node_js:
+  - "stable"
   - "4.2.1"
   - "5.0"
+
+addons:
+    code_climate:
+        repo_token: 93e6cf10482ec0e5223341b2eb938c2830085fb8c7e1f0b7075387d3cadd13fe
+
+after_success: npm run coveralls
