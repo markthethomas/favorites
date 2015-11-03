@@ -63,15 +63,18 @@ function resolveFavorites(jsonPath) {
 }
 
 const favorites = cli
-  .version('0.0.7')
-  .usage('[options] favorites install <favorites.json> (can be local or public URL)')
+  .version('0.0.8')
+  .usage('favorites install <favorites.json> (can be local or public URL)')
   .option('-v, --verbose', 'Show parsed favorites to be installed')
   .option('-p, --project', 'Install your favorites into a local project')
   .option('-g, --global', 'Install your favorites globally');
 
-favorites.command('install [options] <favorites>')
+favorites.command('install <favorites>')
   .description('install your favorites!')
   .action((jsonFavorites) => {
+    if (!jsonFavorites) {
+      throw new Error(chalk.red('You must provide a favorites.json file'));
+    }
     resolveFavorites(jsonFavorites)
       .then(data => {
         if (favorites.verbose) {
@@ -122,6 +125,5 @@ favorites.command('install [options] <favorites>')
   });
 
 favorites.parse(process.argv);
-
 
 module.exports = favorites;
